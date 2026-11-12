@@ -2,16 +2,20 @@
 
 import csv
 import json
-
 import requests
 
 url = "https://pokeapi.co/api/v2/pokemon/ditto"
-response = requests.get(url)
+response = requests.get(url, timeout=10)
 response.raise_for_status()
 
 naam_pokemon = response.json()["name"]
 ability_not_hidden = response.json()["abilities"][0]["ability"]["name"]
 ability_hidden = response.json()["abilities"][1]["ability"]["name"]
+
+# except requests.exceptions.Timeout:
+#     print("De website deed er te lang over. Probeer het later opnieuw.")
+# except requests.exceptions.RequestException as e:
+#     print("Er is een fout opgetreden bij het ophalen van de gegevens:")
 
 print("De naam van de Pokémon is: " + naam_pokemon)
 print("Deze Pokémon heeft twee abilities. Die abilities zijn: " +
