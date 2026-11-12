@@ -12,6 +12,13 @@ naam_pokemon = response.json()["name"]
 ability_not_hidden = response.json()["abilities"][0]["ability"]["name"]
 ability_hidden = response.json()["abilities"][1]["ability"]["name"]
 
+if response.status_code == 200:
+    print("De aanvraag is gelukt!")
+
+else:
+    print("Er is iets misgegaan!")
+    print("Statuscode:", response.status_code)
+
 # except requests.exceptions.Timeout:
 #     print("De website deed er te lang over. Probeer het later opnieuw.")
 # except requests.exceptions.RequestException as e:
