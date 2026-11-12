@@ -1,1 +1,5 @@
 #Dit is het bestand waarin ik mijn code schrijf die ik aanlever voor de toets over Programmeren en automatisering van Kalibr.
+#Op dit moment is het gelukt om de file te openen in zowel de PowerShell als mijn vertaler VSCode!
+#Op dit moment krijg ik het niet helemaal aan de praat om mijn aanpassingen door te voeren naar GitHub. Wat ik nu eerst ga doen is de code schrijven, en hopen dat ik daarna voldoende tijd over heb voor GitHub.
+
+#Stap 1. Zet een Python programma op dat gegevens ophaalt bij een aangewezen publieke REST-API.
