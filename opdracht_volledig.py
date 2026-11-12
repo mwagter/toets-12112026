@@ -1,5 +1,7 @@
 # In dit file wil ik de volledige opdracht in code laten zien. Deze code bestaat uit verschillende onderdelen code die zijn samengevoegd om er één mooi, werkend geheel van te maken.
 
+import csv
+
 import requests
 
 url = "https://pokeapi.co/api/v2/pokemon/ditto"
@@ -24,3 +26,12 @@ verrijkte_gegevens = []
 lengte_naam_pokemon = len(naam_pokemon)
 
 print("De naam van de Pokémon is " + str(lengte_naam_pokemon) + " letters lang.")
+
+kolommen = ["name", "ability_not_hidden", "ability_hidden", "length_name"]
+
+with open("gebruikers.csv", "w", newline="", encoding="utf-8") as csvfile:
+    writer = csv.DictWriter(csvfile, fieldnames=kolommen)
+    writer.writeheader()
+    writer.writerows(verrijkte_gegevens)
+
+print("CSV-bestand succesvol aangemaakt met de verrijkte gegevens.")
