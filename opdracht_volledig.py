@@ -1,6 +1,7 @@
 # In dit file wil ik de volledige opdracht in code laten zien. Deze code bestaat uit verschillende onderdelen code die zijn samengevoegd om er één mooi, werkend geheel van te maken.
 
 import csv
+import json
 
 import requests
 
@@ -27,6 +28,13 @@ lengte_naam_pokemon = len(naam_pokemon)
 
 print("De naam van de Pokémon is " + str(lengte_naam_pokemon) + " letters lang.")
 
+verrijkte_gegevens.append({
+    "name": naam_pokemon,
+    "ability_not_hidden": ability_not_hidden,
+    "ability_hidden": ability_hidden,
+    "length_name": lengte_naam_pokemon
+})
+
 kolommen = ["name", "ability_not_hidden", "ability_hidden", "length_name"]
 
 with open("gebruikers.csv", "w", newline="", encoding="utf-8") as csvfile:
@@ -35,3 +43,8 @@ with open("gebruikers.csv", "w", newline="", encoding="utf-8") as csvfile:
     writer.writerows(verrijkte_gegevens)
 
 print("CSV-bestand succesvol aangemaakt met de verrijkte gegevens.")
+
+with open("gebruikers.json", "w", newline="", encoding="utf-8") as jsonfile:
+    json.dump(verrijkte_gegevens, jsonfile, indent=4, ensure_ascii=False)
+
+print("JSON-bestand succesvol aangemaakt!")
