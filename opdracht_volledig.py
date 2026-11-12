@@ -19,6 +19,10 @@ else:
     print("Er is iets misgegaan!")
     print("Statuscode:", response.status_code)
 
+# naam = naam_pokemon.get()["name"]
+# if naam is None:
+#     print("De naam van de Pokémon is niet beschikbaar.")
+
 # except requests.exceptions.Timeout:
 #     print("De website deed er te lang over. Probeer het later opnieuw.")
 # except requests.exceptions.RequestException as e:
